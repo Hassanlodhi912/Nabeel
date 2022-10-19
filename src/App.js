@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import { useSelector } from 'react-redux';
 import './App.css';
-
+import Router from './config/Router';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const fname =useSelector((state)=>state.loginReducer.firstName)
+   console.log(fname)
+   const lname =useSelector((state)=>state.loginReducer.lastName)
+   console.log(lname)
+   const email =useSelector((state)=>state.loginReducer.email)
+   console.log(email)
+
+  return  <Router/>
+
 }
 
 export default App;
+  
